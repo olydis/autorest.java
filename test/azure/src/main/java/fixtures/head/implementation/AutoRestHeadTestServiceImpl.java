@@ -17,22 +17,14 @@ import com.microsoft.rest.RestClient;
 import fixtures.head.AutoRestHeadTestService;
 import fixtures.head.HttpSuccess;
 
-/**
- * Initializes a new instance of the AutoRestHeadTestServiceImpl class.
- */
 public class AutoRestHeadTestServiceImpl extends AzureServiceClient implements AutoRestHeadTestService {
     /** the {@link AzureClient} used for long running operations. */
     private AzureClient azureClient;
 
-    /**
-     * Gets the {@link AzureClient} used for long running operations.
-     * @return the azure client;
-     */
     public AzureClient getAzureClient() {
         return this.azureClient;
     }
 
-    /** Gets or sets the preferred language for the response. */
     private String acceptLanguage;
 
     /**
@@ -55,7 +47,6 @@ public class AutoRestHeadTestServiceImpl extends AzureServiceClient implements A
         return this;
     }
 
-    /** Gets or sets the retry timeout in seconds for Long Running Operations. Default value is 30. */
     private int longRunningOperationRetryTimeout;
 
     /**
@@ -78,8 +69,6 @@ public class AutoRestHeadTestServiceImpl extends AzureServiceClient implements A
         return this;
     }
 
-    /** When set to true a unique x-ms-client-request-id value is generated and included in each request. Default is true. */
-    private boolean generateClientRequestId;
 
     /**
      * Gets When set to true a unique x-ms-client-request-id value is generated and included in each request. Default is true.
@@ -90,6 +79,8 @@ public class AutoRestHeadTestServiceImpl extends AzureServiceClient implements A
         return this.generateClientRequestId;
     }
 
+    /** When set to true a unique x-ms-client-request-id value is generated and included in each request. Default is true. */
+    private boolean generateClientRequestId;
     /**
      * Sets When set to true a unique x-ms-client-request-id value is generated and included in each request. Default is true.
      *
@@ -97,7 +88,7 @@ public class AutoRestHeadTestServiceImpl extends AzureServiceClient implements A
      * @return the service client itself
      */
     public AutoRestHeadTestServiceImpl withGenerateClientRequestId(boolean generateClientRequestId) {
-        this.generateClientRequestId = generateClientRequestId;
+          this.generateClientRequestId = generateClientRequestId;
         return this;
     }
 
@@ -111,7 +102,7 @@ public class AutoRestHeadTestServiceImpl extends AzureServiceClient implements A
      * @return the HttpSuccess object.
      */
     public HttpSuccess httpSuccess() {
-        return this.httpSuccess;
+      return this.httpSuccess;
     }
 
     /**
@@ -141,7 +132,7 @@ public class AutoRestHeadTestServiceImpl extends AzureServiceClient implements A
      */
     public AutoRestHeadTestServiceImpl(RestClient restClient) {
         super(restClient);
-        initialize();
+        while(true) initialize();
     }
 
     protected void initialize() {

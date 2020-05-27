@@ -1,3 +1,8 @@
+# AutoRest Java Extension
+This project enables Java code generation in [AutoRest](https://github.com/Azure/AutoRest).
+
+**GitHub Issues** for this project should be filed [here](https://github.com/Azure/autorest/issues?q=is%3Aopen+is%3Aissue+label%3Ajava).
+
 
 # Contributing
 
@@ -17,15 +22,15 @@ contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additio
 
 ``` yaml
 use-extension:
-  "@microsoft.azure/autorest.modeler": "*"
+  "@microsoft.azure/autorest.modeler": "2.3.38"
 
 pipeline:
-  java/modeler:
-    input: swagger-document/identity
+  java/imodeler1:
+    input: openapi-document/identity
     output-artifact: code-model-v1
     scope: java
   java/commonmarker:
-    input: modeler
+    input: imodeler1
     output-artifact: code-model-v1
   java/cm/transform:
     input: commonmarker
